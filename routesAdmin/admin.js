@@ -2,6 +2,7 @@ let express = require('express');
 let router = express.Router();
 let path = require("path");
 let mysql = require('mysql');
+const con = require('../db.js');
 
 // IMPORT JSON FILE
 let homePageData = require('../data/homePageData');
@@ -14,12 +15,6 @@ const multer = require('multer');
 const upload = multer({ dest: 'tmp/' });
 const fs = require('fs');
 
-let con = mysql.createConnection({
- 		host: "sql7.freesqldatabase.com",
- 		user: "sql7233133",
- 		password: "r3AcfGXI7U",
- 		database: "sql7233133"
-});
 // affichage de la page adminHomePage
 router.get( "/homePage", (req,res,next) => {
 	let sqlRequest = `SELECT * from homepage;`;

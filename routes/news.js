@@ -1,13 +1,7 @@
 var express = require('express');
 var router = express.Router();
 let mysql = require('mysql');
-
-let con = mysql.createConnection({
-	host: "sql7.freesqldatabase.com",
-	user: "sql7233133",
-	password: "r3AcfGXI7U",
-	database: "sql7233133"
-});
+const con = require('../db.js');
 
 router.post('/apim', function(req, res) {
 	  let mail = `insert into subscribers (mail) values ('${req.query.mail}');`;

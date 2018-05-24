@@ -2,13 +2,7 @@ let express = require('express');
 let router = express.Router();
 let mysql = require('mysql');
 const nodemailer = require("nodemailer");
-
-let con = mysql.createConnection({
- 		host: "sql7.freesqldatabase.com",
- 		user: "sql7233133",
- 		password: "r3AcfGXI7U",
- 		database: "sql7233133"
-});
+const con = require('../db.js');
 
 router.get('/', function(req, res) {
   res.render('blockcontent/nouscontacter');
